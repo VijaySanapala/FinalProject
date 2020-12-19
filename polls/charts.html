@@ -1,0 +1,115 @@
+    <html>
+    <head>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+        google.charts.setOnLoadCallback(drawChart2);
+        google.charts.setOnLoadCallback(drawChart3);
+        google.charts.setOnLoadCallback(drawChart4);
+        //   google.charts.setOnLoadCallback(drawChart5);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+            ['Country', 'TotalConfirmed'],
+            ['United States of America', 17206647],
+            ['Canada', 492556],
+            ['United Kingdom', 1954268],
+            ['China', 94734]
+            ]);
+            var options = {
+            chart: {
+                title: 'Confirmed cases in developed Countries',
+                subtitle: 'Countries:United States of America,Canada,China, United Kingdom',
+            },
+            bars: 'horizontal' // Required for Material Bar Charts.
+            };
+            var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+        }
+        function drawChart2() {
+            var data2 = google.visualization.arrayToDataTable([
+                ['Country', 'TotalDeaths'],
+                ['United States of America', 310699],
+                ['Canada', 13939],
+                ['United Kingdom', 66150],
+                ['China', 4759]
+            ]);
+            var options = {
+
+                title: 'TotalDeaths in developed Countries',
+                subtitle: 'Countries:United States of America,Canada,China, United Kingdom'
+            ,
+            bars: 'vertical' // Required for Material Bar Charts.
+            };
+            var chart2 = new google.charts.Bar(document.getElementById('barchart_material2'));
+            chart2.draw(data2, google.charts.Bar.convertOptions(options));
+            }
+            function drawChart3() {
+            var data3 = google.visualization.arrayToDataTable([
+            ['Country', 'TotalRecovered'],
+            ['United States of America', 7406],
+            ['Canada', 403667],
+            ['United Kingdom', 4123],
+            ['China', 88429]
+            ]);
+
+            var options = {
+
+                title: 'TotalRecovered in developed Countries',
+                subtitle: 'Countries:United States of America,Canada,China, United Kingdom'
+            ,
+            bars: 'horizontal' // Required for Material Bar Charts.
+            };
+            var chart3 = new google.charts.Bar(document.getElementById('barchart_material3'));
+            chart3.draw(data3, google.charts.Bar.convertOptions(options));
+            }
+            function drawChart4() {
+            var data4 = google.visualization.arrayToDataTable([
+            ['Country', 'NewRecovered'],
+            ['United States of America', 264],
+            ['Canada', 6450],
+            ['United Kingdom', 17],
+            ['China', 103]
+            ]);
+            var options = {
+
+                title: 'NewRecovered in developed Countries',
+                subtitle: 'Countries:United States of America,Canada,China, United Kingdom'
+            ,
+            bars: 'vertical' // Required for Material Bar Charts.
+            };
+            var chart4 = new google.charts.Bar(document.getElementById('barchart_material4'));
+            chart4.draw(data4, google.charts.Bar.convertOptions(options));
+            }
+        //     function drawChart5() {
+
+        //     var data = google.visualization.arrayToDataTable([
+        //       ['Country', 'United States of America'],
+        //       ['NewConfirmed',     233271],
+        //       ['TotalConfirmed',      17206647],
+        //       ['NewDeaths',  3270],
+        //       ['TotalDeaths', 310699],
+        //       ['NewRecovered',    0]
+        //     ]);
+
+        //     var options = {
+        //       title: 'My Daily Activities'
+        //     };
+
+        //     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        //     chart.draw(data, options);
+        //   }
+        </script>
+    </head>
+    <body>
+        <h2 align="center">Covid19 WebApp</h2>
+        <!-- <div id="barchart_material" style="overflow: auto; auto; width: 700px; height: 400px;float: left;"></div> -->
+        <div id="barchart_material2" style="overflow: auto;width: 700px; height: 400px;float: left;"></div>
+        <div id="barchart_material3" style="overflow: auto;width: 700px; height: 400px;float: left;;"></div>
+        <div id="barchart_material4" style="overflow: auto;width: 700px; height: 400px;float: left;"></div>
+    </body>
+
+    </html>
